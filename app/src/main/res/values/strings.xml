@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">kotlin_vk3</string>
+    <string name="popular">Популярные</string>
+    <string name="main">Главная</string>
+    <string name="bookmarked">Избранное</string>
+    <string name="search">Поиск</string>
+    <string name="profile">Профиль</string>
+    <string name="search_results">Результаты поиска: </string>
+    <string name="nothing_found">Ничего не найдено</string>
+</resources>

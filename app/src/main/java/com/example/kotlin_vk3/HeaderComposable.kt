@@ -13,8 +13,9 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -31,7 +32,7 @@ fun Header(headerTitle:String){
     {
         Spacer(modifier = Modifier.width(30.dp))
         Image(
-            painter = painterResource(id = R.drawable.pumpkin),
+            imageVector = ImageVector.vectorResource(R.drawable.pumpkin_svg),
             contentDescription = "",
             modifier = Modifier.size(30.dp)
         )
@@ -55,7 +56,7 @@ fun SearchHeader(searchString:String, navController: NavHostController){
             modifier = Modifier.size(28.dp, 30.dp)
         ) {
             Image(
-                painter = painterResource(id = R.drawable.arrow_back),
+                imageVector = ImageVector.vectorResource(R.drawable.arrow_back_custom),
                 contentDescription = "",
                 modifier = Modifier.fillMaxSize()
             )

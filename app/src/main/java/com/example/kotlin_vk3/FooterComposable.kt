@@ -16,8 +16,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
@@ -34,28 +35,28 @@ fun Footer(navController: NavHostController){
 
     {
         FooterButton(
-            imgId = R.drawable.main,
+            imgVector = ImageVector.vectorResource(R.drawable.main),
             textId = stringResource(R.string.main),
             navController,
             Routes.Main.route
         )
         Spacer(modifier = Modifier.width(30.dp))
         FooterButton(
-            imgId = R.drawable.favourites,
+            imgVector = ImageVector.vectorResource(R.drawable.favourite),
             textId = stringResource(R.string.bookmarked),
             navController,
             Routes.Bookmarked.route
         )
         Spacer(modifier = Modifier.width(30.dp))
         FooterButton(
-            imgId = R.drawable.search,
+            imgVector = ImageVector.vectorResource(R.drawable.search),
             textId = stringResource(R.string.search),
             navController,
             Routes.Search.route
         )
         Spacer(modifier = Modifier.width(30.dp))
         FooterButton(
-            imgId = R.drawable.profile,
+            imgVector = ImageVector.vectorResource(R.drawable.ghost),
             textId = stringResource(R.string.profile),
             navController,
             Routes.Main.route
@@ -64,14 +65,14 @@ fun Footer(navController: NavHostController){
 }
 
 @Composable
-fun FooterButton(imgId:Int, textId:String, navController: NavHostController, navLink:String){
+fun FooterButton(imgVector:ImageVector, textId:String, navController: NavHostController, navLink:String){
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,
         modifier = Modifier.size(60.dp, 50.dp)
     ) {
         Image(
-            painter = painterResource(id = imgId),
+            imageVector = imgVector,
             contentDescription = "",
             modifier = Modifier.size(18.dp).clickable { navController.navigate(navLink) }
         )
